@@ -95,13 +95,13 @@
 import 'package:flutter_lectures/BankAccount.dart';
 
 void main(){
-// BankAccount user1=new BankAccount(1000);
-// user1.deposit(200);
-// int userBalance=user1.getBalance();
-// print('user balance is ${userBalance}');
-// user1.withDraw(500);
-// userBalance=user1.getBalance();
-// print('user balance is ${userBalance}');
+BankAccount user1=new BankAccount(1000);
+user1.deposit(200);
+int userBalance=user1.getBalance();
+print('user balance is ${userBalance}');
+user1.withDraw(500);
+userBalance=user1.getBalance();
+print('user balance is ${userBalance}');
 
 
 
