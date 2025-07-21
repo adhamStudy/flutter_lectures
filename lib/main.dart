@@ -35,19 +35,58 @@ class MyApp extends StatelessWidget{
       //      overflow: TextOverflow.fade,
       //
       //    ),
-         Container(
-           decoration: BoxDecoration(color: Colors.deepOrangeAccent,
-           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),topRight: Radius.circular(20)),
+      //    Container(
+      //      decoration: BoxDecoration(color: Colors.deepOrangeAccent,
+      //      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),topRight: Radius.circular(20)),
+      //
+      //
+      //
+      //      ),
+      //      margin: EdgeInsets.all(10),
+      //      width: 220,
+      //      height : 150,
+      //      // color: Colors.deepOrangeAccent,
+      //      child: Center(child: MyText('Body of the app'),),
+      //    )
+         Stack(children: [
+           Container(
+                decoration: BoxDecoration(color: Colors.grey.shade300,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),topRight: Radius.circular(20)),
+                ),
+                margin: EdgeInsets.all(10),
+                width: 220,
+                height : 150,
+                // color: Colors.deepOrangeAccent,
+                child: Center(child: MyText('Body of the app'),),
+              ),
 
+           Positioned(
+             top: 105,
+             left: 175,
+             child: Container(
+               width:70,
+               height: 70,
+               // child: Center(child: Text('30%',style: TextStyle(color: Colors.white),),),
+               decoration: BoxDecoration(color: Colors.white,
 
-           
+                   borderRadius: BorderRadius.circular(50)
+               ),
+             ),
            ),
-           margin: EdgeInsets.all(10),
-           width: 220,
-           height : 150,
-           // color: Colors.deepOrangeAccent,
-           child: Center(child: MyText('Body of the app'),),
-         )
+           Positioned(
+             top: 110,
+             left: 180,
+             child: Container(
+               width:60,
+               height: 60,
+               child: Center(child: Text('30%',style: TextStyle(color: Colors.white,fontSize: 20),),),
+               decoration: BoxDecoration(color: Colors.green,
+
+                   borderRadius: BorderRadius.circular(50)
+               ),
+             ),
+           ),
+         ],)
       ),
       )
     ;
