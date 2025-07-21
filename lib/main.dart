@@ -28,9 +28,29 @@ class MyApp extends StatelessWidget{
             }, icon: Icon(Icons.add))
           ],
          ),
-       ),
+         body:
+      //    Text('Hello from body , Hello from body, Hello from body, Hello from body, Hello from body ',
+      // maxLines: 1,
+      //      style: TextStyle(fontSize: 20,color: Colors.red),
+      //      overflow: TextOverflow.fade,
+      //
+      //    ),
+         Container(
+           decoration: BoxDecoration(color: Colors.deepOrangeAccent,
+           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),topRight: Radius.circular(20)),
 
-      );
+
+           
+           ),
+           margin: EdgeInsets.all(10),
+           width: 220,
+           height : 150,
+           // color: Colors.deepOrangeAccent,
+           child: Center(child: MyText('Body of the app'),),
+         )
+      ),
+      )
+    ;
   }
 }
 
