@@ -60,19 +60,7 @@ class MyApp extends StatelessWidget{
                 child: Center(child: MyText('Body of the app'),),
               ),
 
-           Positioned(
-             top: 105,
-             left: 175,
-             child: Container(
-               width:70,
-               height: 70,
-               // child: Center(child: Text('30%',style: TextStyle(color: Colors.white),),),
-               decoration: BoxDecoration(color: Colors.white,
 
-                   borderRadius: BorderRadius.circular(50)
-               ),
-             ),
-           ),
            Positioned(
              top: 110,
              left: 180,
@@ -81,6 +69,7 @@ class MyApp extends StatelessWidget{
                height: 60,
                child: Center(child: Text('30%',style: TextStyle(color: Colors.white,fontSize: 20),),),
                decoration: BoxDecoration(color: Colors.green,
+                   border: Border.all(width: 5,color: Colors.white),
 
                    borderRadius: BorderRadius.circular(50)
                ),
