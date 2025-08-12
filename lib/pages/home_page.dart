@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lectures/pages/second_page.dart';
+
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -54,19 +54,6 @@ class Home extends StatelessWidget {
               )
               ,
             ),
-            SizedBox(height: 20,),
-            Align(
-              alignment: Alignment.center,
-              child:
-              Container(
-                width: 200,
-                child: ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(),));
-                }, child: Text('click me')),
-              ),
-            )
-
-
           ],
         )
 
