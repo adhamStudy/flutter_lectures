@@ -1,8 +1,16 @@
 
 import 'package:flutter/material.dart';
 
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   CartPage({super.key});
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  List<bool> isFav= [false,false,false,false,false,false];
+
   @override
   Widget build(BuildContext context) {
     print('hello from build');
@@ -15,47 +23,72 @@ class CartPage extends StatelessWidget {
           ),
           ),
       ),
-      body: Container(
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20)
+      body:
+     ListView.builder(
+       itemCount: 6,
+       itemBuilder:
+     (context, index) {
+       return  Container(
+         margin: EdgeInsets.all(5),
+         height: 120,
+         width: double.infinity,
+         decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(10),
+           color: Colors.white,
 
-        ),
-        height: 120,
-        child: Row(
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(image: AssetImage('assets/products/0.jpg',
-                  ),
-                  )
-              ),
-            ),
-            SizedBox(width: 10,),
-            Column(
-              children: [
-                SizedBox(height: 20,),
-                Text('Iphone16 ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
-                Text('600\$')
-              ],
-            ),
-            Spacer(),
-            IconButton(onPressed: () {
+         ),
+         child:
+         Row(
+           children: [
 
-            }, icon: Icon(
-              Icons.favorite_border
+             Container(
+               height: 110,
+               width: 120,
 
-              ,color: Colors.red,
-            ),
-            )
-          ],
-        ),
-      )
+               decoration: BoxDecoration(
+                 // color: Colors.red,
+                   borderRadius: BorderRadius.circular(10),
+                   image: DecorationImage(
+                       fit: BoxFit.cover,
+                       image: AssetImage('assets/products/${index}.jpg'))
+               ),
+             ),
+             SizedBox(width: 10,),
+             Container(
+
+
+               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Text('Iphone 16 pro',style: TextStyle(fontSize: 20,),),
+                   Text('800 \$',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.red),),
+                 ],
+               ),
+             ),
+             Spacer(),
+             Container(
+               margin: EdgeInsets.only(right: 10),
+               child: IconButton(onPressed: () {
+
+                setState(() {
+                  isFav[index] = !isFav[index];
+                });
+
+
+               }, icon: Icon(
+
+                isFav[index] ?Icons.favorite :Icons.favorite_border,
+
+
+                 color: Colors.red,)),
+             ),
+
+           ],
+         )
+         ,
+       );
+     },
+     )
     );
   }
 }

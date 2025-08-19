@@ -1,5 +1,6 @@
 // Lecture 5 : List View + ListView Builder
 import 'package:flutter/material.dart';
+import 'package:flutter_lectures/pages/cart_page.dart';
 import 'package:flutter_lectures/pages/home_page.dart';
 void main() {
   print('test');
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-       home: Home()
+       home: CartPage()
       )
     ;
   }
