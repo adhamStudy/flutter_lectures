@@ -1,19 +1,8 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class CartPage extends StatefulWidget {
+class CartPage extends StatelessWidget {
   CartPage({super.key});
-
-  @override
-  State<CartPage> createState() => _CartPageState();
-}
-
-class _CartPageState extends State<CartPage> {
-  List <String> products = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'];
-
-  List  favorites = [ false,false,false,false,false,false];
-
   @override
   Widget build(BuildContext context) {
     print('hello from build');
@@ -27,52 +16,45 @@ class _CartPageState extends State<CartPage> {
           ),
       ),
       body: Container(
-        child: ListView.builder(
-          itemCount: 6,
-          itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20)
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20)
 
-            ),
-            height: 120,
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 10),
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                   image: DecorationImage(image: AssetImage('assets/products/${index}.jpg',
-                   ),
-                   )
+        ),
+        height: 120,
+        child: Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              height: 100,
+              width: 100,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(image: AssetImage('assets/products/0.jpg',
                   ),
-                ),
-                SizedBox(width: 10,),
-               Column(
-                 children: [
-                   SizedBox(height: 20,),
-                   Text('Iphone16 ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
-                   Text('600\$')
-                 ],
-               ),
-                Spacer(),
-                IconButton(onPressed: () {
-                  setState(() {
-                    favorites[index] = !favorites[index];
-                  });
-                }, icon: Icon(
-
-                 favorites[index] ? Icons.favorite : Icons.favorite_border
-
-                  ,color: Colors.red,))
+                  )
+              ),
+            ),
+            SizedBox(width: 10,),
+            Column(
+              children: [
+                SizedBox(height: 20,),
+                Text('Iphone16 ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                Text('600\$')
               ],
             ),
-          );
-        },),
+            Spacer(),
+            IconButton(onPressed: () {
+
+            }, icon: Icon(
+              Icons.favorite_border
+
+              ,color: Colors.red,
+            ),
+            )
+          ],
+        ),
       )
     );
   }
